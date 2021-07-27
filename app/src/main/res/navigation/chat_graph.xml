@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chat_graph"
+    app:startDestination="@id/containerFragment">
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.omurgun.chattime.view.fragment.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" >
+        <action
+            android:id="@+id/action_chatFragment_to_chatsFragment"
+            app:destination="@id/chatsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatsFragment"
+        android:name="com.omurgun.chattime.view.fragment.ChatsFragment"
+        android:label="ChatsFragment" >
+        <action
+            android:id="@+id/action_chatsFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/containerFragment"
+        android:name="com.omurgun.chattime.view.fragment.ContainerFragment"
+        android:label="ContainerFragment" >
+        <action
+            android:id="@+id/action_containerFragment_to_chatsFragment"
+            app:destination="@id/chatsFragment" />
+        <action
+            android:id="@+id/action_containerFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+</navigation>
